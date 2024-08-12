@@ -2,7 +2,6 @@ import React from 'react'
 import LogoIcon from '@/assets/icons/svg/logo.svg'
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import Link from 'next/link';
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
     asChild?: boolean,

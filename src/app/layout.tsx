@@ -29,7 +29,6 @@ export default function RootLayout({
           "wrapper"
         )}>
           <Sidebar />
-          <Header />
           {children}
         </div>
       </body>
