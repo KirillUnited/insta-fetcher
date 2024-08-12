@@ -13,7 +13,7 @@ export default function Header({ className }: Props) {
                 <div className='flex items-center justify-between min-h-20 py-2'>
                     <h2 className='text-2xl font-bold'>@san_vino</h2>
                     <div className='flex items-center gap-4'>
-                        <SearchInput />
+                        <SearchInput variant={'withIcon'} />
                         <ThemeSwitcher theme='light' />
                     </div>
                 </div>
