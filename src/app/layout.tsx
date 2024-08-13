@@ -21,15 +21,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ru">
       <body className={cn(
         fontSans.variable
       )}>
         <div className={cn(
-          "wrapper"
+          "flex flex-col min-h-dvh",
         )}>
-          <Sidebar />
-          {children}
+          {/* <Sidebar /> */}
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
         </div>
       </body>
     </html>
