@@ -5,7 +5,7 @@ import { Input } from '../ui/input';
 
 interface Props { }
 
-export default function Hero({ }: Props) {
+export default function HeroSection({ }: Props) {
     return (
         <section>
             <div className="container">

@@ -10,7 +10,7 @@ interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
 export default function ThemeSwitcher({ theme, className }: Props) {
     return (
         <div className={cn("theme-switcher", className)}>
-            <Button variant="default" size="icon">
+            <Button variant="outline" size="icon">
                 {theme === 'dark' ? <MoonIcon /> : <SunIcon />}
             </Button>
         </div>

@@ -1,9 +1,11 @@
-import { Header, Hero } from "@/components/shared";
+import { HeroSection } from "@/components/shared";
+import DataSection from "@/components/shared/DataSection";
 
 export default async function Home() {
   return (
-      <section>
-        <Hero />
-      </section>
+    <>
+      <HeroSection />
+      <DataSection />
+    </>
   );
 }
