@@ -1,14 +1,19 @@
 import Header from "./Header";
-import Hero from "./Hero";
+import HeroSection from "./HeroSection";
 import Sidebar from "./Sidebar";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Logo from "./Logo";
 import SearchInput from "./SearchInput";
+import DataPanel from "./DataPanel";
+import DataSection from "./DataSection";
+
 export {
     Header,
-    Hero,
+    HeroSection,
     Sidebar,
     ThemeSwitcher,
     Logo,
-    SearchInput
+    SearchInput,
+    DataSection,
+    DataPanel
 }

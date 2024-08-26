@@ -1,12 +1,11 @@
-import { Header, Hero } from "@/components/shared";
+import { HeroSection } from "@/components/shared";
+import DataSection from "@/components/shared/DataSection";
 
 export default async function Home() {
   return (
-    <main className="flex flex-col">
-      <Header />
-      <div className="flex-1">
-        <Hero />
-      </div>
-    </main>
+    <>
+      <HeroSection />
+      <DataSection />
+    </>
   );
 }

@@ -31,7 +31,7 @@ export default function SearchInput({ className, variant, ...props }: Props) {
                 variant === 'withIcon' &&
                 <SearchIcon size={18} className={cn('search-icon absolute top-1/2 left-2 -translate-y-1/2')} />
             }
-            <Input id='search' name='search' placeholder="Search" type="search" className={cn("search-input w-full",
+            <Input id='search_user' name='search_user' placeholder="Search user" type="search" className={cn("search-input w-full",
                 {
                     'pl-8': variant === 'withIcon',
                 })}
