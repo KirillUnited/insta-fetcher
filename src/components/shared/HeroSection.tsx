@@ -15,7 +15,7 @@ export default function HeroSection({ }: Props) {
                         <p className='text-xl'>Get followers of any Instagram account</p>
                     </div>
                     <div className="flex-center flex-wrap gap-4 py-6">
-                        <Input id='search_account' name='search_account' placeholder="@username" type="search" className={cn("search-input w-auto")}
+                        <Input id='search_account' name='search_account' placeholder="@account_name" type="search" className={cn("search-input w-auto")}
                         />
                         <Button type='submit'>Get</Button>
                     </div>
