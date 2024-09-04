@@ -11,7 +11,7 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: "Instagram Followers",
+  title: "Bro Insta Fetcher",
   description: "Get followers of any Instagram account",
 };
 

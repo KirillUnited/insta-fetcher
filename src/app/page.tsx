@@ -1,4 +1,4 @@
-import { HeroSection } from "@/components/shared";
+import { DataTable, HeroSection } from "@/components/shared";
 import DataSection from "@/components/shared/DataSection";
 
 export default async function Home() {
@@ -6,6 +6,7 @@ export default async function Home() {
     <>
       <HeroSection />
       <DataSection />
+      <DataTable />
     </>
   );
 }
