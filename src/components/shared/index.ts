@@ -6,6 +6,7 @@ import Logo from "./Logo";
 import SearchInput from "./SearchInput";
 import DataPanel from "./DataPanel";
 import DataSection from "./DataSection";
+import DataTable from "./DataTable";
 
 export {
     Header,
@@ -15,5 +16,6 @@ export {
     Logo,
     SearchInput,
     DataSection,
-    DataPanel
+    DataPanel,
+    DataTable
 }
