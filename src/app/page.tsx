@@ -1,11 +1,13 @@
-import { DataTable, HeroSection } from "@/components/shared";
-import DataSection from "@/components/shared/DataSection";
+import { HeroSection } from "@/components/shared";
+import { DataSection, DataTable } from "@/components/shared/data";
 
 export default async function Home() {
   return (
     <>
       <HeroSection />
-      <DataSection />
+      <DataSection>
+        <DataTable />
+      </DataSection>
     </>
   );
 }
