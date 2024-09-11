@@ -1,5 +1,7 @@
 import React from 'react'
-import { DataPanel } from '@/components/shared';
+import { DataPanel, DataTable } from '@/components/shared';
+import { cn } from '@/lib/utils';
+import { Card, CardHeader } from '../ui/card';
 
 const FAKE_DATA = {
   url: 'https://www.instagram.com/san_vino/',
@@ -8,14 +10,19 @@ const FAKE_DATA = {
   title: 'San Vino',
 }
 
-interface Props {}
+interface Props extends React.HTMLAttributes<HTMLDivElement> { }
 
-export default function DataSection({}: Props) {
+export default function DataSection({ className, ...props }: Props) {
   return (
-    <section>
-        <div className="container max-w-screen-lg">
-            <DataPanel {...FAKE_DATA} />
-        </div>
+    <section className={cn(className)} {...props}>
+      <div className="container max-w-screen-lg">
+        <DataPanel {...FAKE_DATA} />
+        <Card className='my-6'>
+          <div className='px-6 py-3'>
+            <DataTable />
+          </div>
+        </Card>
+      </div>
     </section>
   )
 }
