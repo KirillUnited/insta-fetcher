@@ -1,16 +1,22 @@
 import React from 'react'
 import { cn } from '@/lib/utils';
-import { INFO } from '@/constants';
 import { Card } from '@/components/ui/card';
 import { DataPanel } from '@/components/shared/data';
+import {Props as DataPanelProps} from '@/components/shared/data/DataPanel'
 
-interface Props extends React.HTMLAttributes<HTMLDivElement> { }
+interface Props extends React.HTMLAttributes<HTMLDivElement> {
+  withPanel?: boolean,
+  panelData: DataPanelProps,
+  children: React.ReactNode
+}
 
-export default function DataSection({ className, children, ...props }: Props) {
+export default function DataSection({ className, withPanel, panelData: data, children, ...props }: Props) {
   return (
     <section className={cn(className)} {...props}>
       <div className="container max-w-screen-lg">
-        <DataPanel {...INFO} />
+        {
+          withPanel && <DataPanel {...data} />
+        }
         <Card className='my-6'>
           <div className='px-6 py-3'>
             {children}
@@ -21,5 +27,5 @@ export default function DataSection({ className, children, ...props }: Props) {
   )
 }
 export function withDataSection(Component: React.ComponentType<any>) {
-  return (props: any) => <DataSection><Component {...props} /></DataSection>
+  return (props: any) => <DataSection {...props}><Component {...props} /></DataSection>
 }

@@ -1,24 +1,18 @@
 import { HeroSection } from "@/components/shared";
 import { DataSection, DataTable } from "@/components/shared/data";
+import getUsers from "@/lib/getUsers";
 import { Loader2 } from "lucide-react";
 import { Suspense } from "react";
+import { INFO } from '@/constants';
 
 export default async function Home() {
-  let data = [];
-
-  try {
-    data = await fetch("http://localhost:3000/api/users", {
-      method: "GET",
-    }).then((res) => res.json());
-  } catch (error) {
-    console.log(error);
-  }
+  const data = await getUsers();
 
   return (
     <>
       <HeroSection />
-      <DataSection>
-        <Suspense fallback={<Loader2 className="w-10 h-10 animate-spin" />}>
+      <DataSection withPanel panelData={INFO}>
+        <Suspense fallback={<Loader2 className="w-10 h-10 animate-spin mx-auto" />}>
           <DataTable data={data} />
         </Suspense>
       </DataSection>
