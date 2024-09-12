@@ -1,18 +1,11 @@
 import { HeroSection } from "@/components/shared";
 import { DataSection, DataTable } from "@/components/shared/data";
+import getUsers from "@/lib/getUsers";
 import { Loader2 } from "lucide-react";
 import { Suspense } from "react";
 
 export default async function Home() {
-  let data = [];
-
-  try {
-    data = await fetch("http://localhost:3000/api/users", {
-      method: "GET",
-    }).then((res) => res.json());
-  } catch (error) {
-    console.log(error);
-  }
+  const data = await getUsers();
 
   return (
     <>
