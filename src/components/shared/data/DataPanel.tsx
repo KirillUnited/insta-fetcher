@@ -17,7 +17,7 @@ export default function DataPanel({ url, avatar, name, title,className, ...props
     return (
         <Card className={cn('w-full', className)} {...props}>
             <CardHeader>
-                <div className={cn('flex flex-wrap items-center justify-between')}>
+                <div className={cn('flex flex-wrap items-center justify-between gap-4')}>
                     <Link href={`${url}`} target='_blank' className='flex items-center gap-4'>
                         <Avatar className='w-16 h-16'>
                             <AvatarImage src={`${avatar}`} alt={`${name}`} />
@@ -28,7 +28,7 @@ export default function DataPanel({ url, avatar, name, title,className, ...props
                         <p className='text-xl font-bold'>{name}</p>
                     </Link>
                     <div className='flex items-center gap-4'>
-                        <SearchInput variant={'withIcon'} />
+                        <SearchInput variant={'withIcon'} placeholder={'Search user...'} />
                     </div>
                 </div>
                 <p className='text-primary text-sm'>Active Members</p>
