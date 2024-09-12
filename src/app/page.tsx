@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <>
       <HeroSection />
-      <DataSection withPanel data={INFO}>
+      <DataSection withPanel panelData={INFO}>
         <Suspense fallback={<Loader2 className="w-10 h-10 animate-spin mx-auto" />}>
           <DataTable data={data} />
         </Suspense>

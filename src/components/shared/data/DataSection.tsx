@@ -6,11 +6,11 @@ import {Props as DataPanelProps} from '@/components/shared/data/DataPanel'
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   withPanel?: boolean,
-  data: DataPanelProps,
+  panelData: DataPanelProps,
   children: React.ReactNode
 }
 
-export default function DataSection({ className, withPanel, data, children, ...props }: Props) {
+export default function DataSection({ className, withPanel, panelData: data, children, ...props }: Props) {
   return (
     <section className={cn(className)} {...props}>
       <div className="container max-w-screen-lg">
