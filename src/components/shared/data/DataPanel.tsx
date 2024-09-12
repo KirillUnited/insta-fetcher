@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Card, CardHeader } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
-interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
+export interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
     className?: string,
     url: string,
     name: string,
@@ -13,7 +13,7 @@ interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
     title?: string
 }
 
-export default function DataPanel({ url, avatar, name, title,className, ...props }: Props) {
+export default function DataPanel({ url, avatar, name, title, className, ...props }: Props) {
     return (
         <Card className={cn('w-full', className)} {...props}>
             <CardHeader>

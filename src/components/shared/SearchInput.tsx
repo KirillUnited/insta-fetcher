@@ -20,8 +20,8 @@ const searchInputVariants = cva('search relative', {
 
 interface Props extends React.HtmlHTMLAttributes<HTMLElement>,
     VariantProps<typeof searchInputVariants> {
-        placeholder?: string
-     }
+    placeholder?: string
+}
 
 export default function SearchInput({ className, variant, ...props }: Props) {
     return (
