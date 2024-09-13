@@ -19,7 +19,7 @@ export default function DataPanel({ url, avatar, name, title, className, ...prop
             <CardHeader>
                 <div className={cn('flex flex-wrap items-center justify-between gap-4')}>
                     <Link href={`${url}`} target='_blank' className='flex items-center gap-4'>
-                        <Avatar className='w-16 h-16'>
+                        <Avatar className='w-16 h-16 shadow-sm border'>
                             <AvatarImage src={`${avatar}`} alt={`${name}`} />
                             <AvatarFallback className='font-bold px-1'>
                                 <span className='truncate inline-block'>{title}</span>

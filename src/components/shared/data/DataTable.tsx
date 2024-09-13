@@ -34,15 +34,14 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export type User = {
   id: string
   username: string
   email: string,
-  name: {
-    firstname: string,
-    lastname: string
-  }
+  name: string,
+  avatar: string
 }
 
 export const columns: ColumnDef<User>[] = [
@@ -72,7 +71,15 @@ export const columns: ColumnDef<User>[] = [
     accessorKey: "name",
     header: "Name",
     cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("username")}</div>
+      <div className="flex items-center gap-2">
+        <Avatar className='w-10 h-10 shadow-sm border'>
+          <AvatarImage src={`${row.getValue("avatar")}`} alt={row.getValue("name")} />
+          <AvatarFallback className='font-bold px-1'>
+            <span className='truncate inline-block'>{row.getValue("name")}</span>
+          </AvatarFallback>
+        </Avatar>
+        <div className="capitalize">{row.getValue("name")}</div>
+      </div>
     ),
   },
   {
