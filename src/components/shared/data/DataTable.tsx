@@ -34,7 +34,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import ProfileAvatar from "@/components/shared/ProfileAvatar"
 
 export type User = {
   id: string
@@ -68,16 +68,18 @@ export const columns: ColumnDef<User>[] = [
     enableHiding: false,
   },
   {
+    accessorKey: "avatar",
+    header: "Avatar",
+    cell: ({ row }) => (
+      <ProfileAvatar avatar={row.getValue("avatar")} name={row.getValue("name")} />
+    ),
+    enableHiding: true
+  },
+  {
     accessorKey: "name",
     header: "Name",
     cell: ({ row }) => (
       <div className="flex items-center gap-2">
-        <Avatar className='w-10 h-10 shadow-sm border'>
-          <AvatarImage src={`${row.getValue("avatar")}`} alt={row.getValue("name")} />
-          <AvatarFallback className='font-bold px-1'>
-            <span className='truncate inline-block'>{row.getValue("name")}</span>
-          </AvatarFallback>
-        </Avatar>
         <div className="capitalize">{row.getValue("name")}</div>
       </div>
     ),
@@ -97,18 +99,18 @@ export const columns: ColumnDef<User>[] = [
     },
     cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
   },
-  {
-    accessorKey: "username",
-    header: () => <div className="text-right">Username</div>,
-    cell: ({ row }) => {
-      return <div className="text-right font-medium">{row.getValue("username")}</div>
-    },
-  },
+  // {
+  //   accessorKey: "username",
+  //   header: () => <div className="text-right">Username</div>,
+  //   cell: ({ row }) => {
+  //     return <div className="text-right font-medium">{row.getValue("username")}</div>
+  //   },
+  // },
   {
     id: "actions",
     enableHiding: false,
     cell: ({ row }) => {
-      const payment = row.original
+      const user = row.original
 
       return (
         <DropdownMenu>
@@ -121,13 +123,12 @@ export const columns: ColumnDef<User>[] = [
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(payment.id)}
+              onClick={() => navigator.clipboard.writeText(user.id)}
             >
-              Copy payment ID
+              Copy user ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>View user profile</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )

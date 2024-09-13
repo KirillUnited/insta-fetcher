@@ -1,9 +1,9 @@
 import React from 'react'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { SearchInput } from '@/components/shared';
 import Link from 'next/link';
 import { Card, CardHeader } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import ProfileAvatar from '@/components/shared/ProfileAvatar';
 
 export interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
     className?: string,
@@ -19,12 +19,7 @@ export default function DataPanel({ url, avatar, name, title, className, ...prop
             <CardHeader>
                 <div className={cn('flex flex-wrap items-center justify-between gap-4')}>
                     <Link href={`${url}`} target='_blank' className='flex items-center gap-4'>
-                        <Avatar className='w-16 h-16 shadow-sm border'>
-                            <AvatarImage src={`${avatar}`} alt={`${name}`} />
-                            <AvatarFallback className='font-bold px-1'>
-                                <span className='truncate inline-block'>{title}</span>
-                            </AvatarFallback>
-                        </Avatar>
+                        <ProfileAvatar avatar={`${avatar}`} name={`${name}`} title={`${title}`} className='w-16 h-16' />
                         <p className='text-xl font-bold'>{name}</p>
                     </Link>
                     <div className='flex items-center gap-4'>
