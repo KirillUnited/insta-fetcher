@@ -29,6 +29,8 @@ export default function Section({ className, variant, children, ...props }: Prop
     </section>
   )
 }
-export function withDataSection(Component: React.ComponentType<any>) {
-  return (props: any) => <Section><Component {...props} /></Section>
+export function withSection(Component: React.ComponentType<any>) {
+  const Section = (props: any) => <Section><Component {...props} /></Section>
+
+  return Section;
 }
