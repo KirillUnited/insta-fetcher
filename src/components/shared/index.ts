@@ -1,4 +1,5 @@
-import Header from "./Header";
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
 import HeroSection from "./HeroSection";
 import Sidebar from "./Sidebar";
 import ThemeSwitcher from "./ThemeSwitcher";
@@ -8,6 +9,7 @@ import Section from "./Section";
 
 export {
     Header,
+    Footer,
     HeroSection,
     Sidebar,
     ThemeSwitcher,
