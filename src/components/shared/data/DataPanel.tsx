@@ -15,7 +15,7 @@ export interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
 
 export default function DataPanel({ url, avatar, name, title, className, ...props }: Props) {
     return (
-        <Card className={cn('w-full', className)} {...props}>
+        <Card className={cn('data-panel w-full', className)} {...props}>
             <CardHeader>
                 <div className={cn('flex flex-wrap items-center justify-between gap-4')}>
                     <Link href={`${url}`} target='_blank' className='flex items-center gap-4'>
