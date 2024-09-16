@@ -14,12 +14,11 @@ export default function ThemeSwitcher({ className }: Props) {
     const handleClick = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
     }
+
     return (
-        <div className={cn("theme-switcher", className)}>
-            <Button variant="outline" size="icon" onClick={handleClick}>
-                <MoonIcon className='absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
-                <SunIcon className='rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
-            </Button>
-        </div>
+        <Button className={cn("theme-switcher", className)} variant="outline" size="icon" onClick={handleClick}>
+            <MoonIcon className='absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
+            <SunIcon className='rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
+        </Button>
     )
 }

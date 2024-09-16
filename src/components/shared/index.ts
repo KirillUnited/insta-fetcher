@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import ThemeSwitcher from "./ThemeSwitcher";
 import Logo from "./Logo";
 import SearchInput from "./SearchInput";
+import Section from "./Section";
 
 export {
     Header,
@@ -11,5 +12,6 @@ export {
     Sidebar,
     ThemeSwitcher,
     Logo,
-    SearchInput
+    SearchInput,
+    Section
 }
