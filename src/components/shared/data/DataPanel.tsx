@@ -4,16 +4,19 @@ import Link from 'next/link';
 import { Card, CardHeader } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import ProfileAvatar from '@/components/shared/ProfileAvatar';
+import DataPanelInfo from './DataPanelInfo';
 
 export interface Props extends React.HtmlHTMLAttributes<HTMLElement> {
     className?: string,
     url: string,
     name: string,
     avatar?: string,
-    title?: string
+    title?: string,
+    followers?: number,
+    posts?: number,
 }
 
-export default function DataPanel({ url, avatar, name, title, className, ...props }: Props) {
+export default function DataPanel({ url, avatar, name, title, followers, posts, className, ...props }: Props) {
     return (
         <Card className={cn('data-panel w-full', className)} {...props}>
             <CardHeader>
@@ -22,11 +25,8 @@ export default function DataPanel({ url, avatar, name, title, className, ...prop
                         <ProfileAvatar avatar={`${avatar}`} name={`${name}`} title={`${title}`} className='w-16 h-16' />
                         <p className='text-xl font-bold'>{name}</p>
                     </Link>
-                    <div className='flex items-center gap-4'>
-                        <SearchInput variant={'withIcon'} placeholder={'Search user...'} />
-                    </div>
+                    <DataPanelInfo data={{ followers, posts }} />
                 </div>
-                <p className='text-primary text-sm'>Active Members</p>
             </CardHeader>
         </Card>
     )
