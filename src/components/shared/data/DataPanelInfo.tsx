@@ -24,11 +24,11 @@ const Item = ({ title, count, className }: { title: string, count: number } & Re
     </div>
 )
 
-export default function DataPanelInfo({ data }: Props) {
+export default function DataPanelInfo({ data, className }: Props) {
     const { followers, posts } = data;
 
     return (
-        <div className='flex items-center gap-4'>
+        <div className={cn('flex items-center gap-4', className)}>
             {
                 followers &&
                 <Item title='Followers' count={followers} />
