@@ -5,12 +5,13 @@ import { cva, VariantProps } from 'class-variance-authority';
 const variants = cva('container', {
   variants: {
     variant: {
-      lg: 'max-w-screen-lg',
+      default: '',
+      lg: 'lg:max-w-screen-lg',
       fluid: 'max-w-full',
     },
   },
   defaultVariants: {
-    variant: 'lg',
+    variant: 'default',
   },
 })
 

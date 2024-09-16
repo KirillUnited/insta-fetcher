@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <>
       <HeroSection />
-      <Section>
+      <Section variant={"lg"}>
         <DataPanel {...INFO} />
         <Card className='my-6'>
           <div className='px-6 py-3'>
