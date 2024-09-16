@@ -20,7 +20,9 @@ const searchInputVariants = cva('search relative', {
 
 interface Props extends React.HtmlHTMLAttributes<HTMLElement>,
     VariantProps<typeof searchInputVariants> {
-    placeholder?: string
+    placeholder?: string,
+    value?: string,
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export default function SearchInput({ className, variant, ...props }: Props) {
@@ -33,7 +35,7 @@ export default function SearchInput({ className, variant, ...props }: Props) {
                 variant === 'withIcon' &&
                 <SearchIcon size={18} className={cn('search-icon absolute top-1/2 left-2 -translate-y-1/2')} />
             }
-            <Input id='search_user' name='search_user' placeholder={props.placeholder} autoComplete="off" type="search" className={cn("search-input w-full",
+            <Input id='search_user' name='search_user' placeholder={props.placeholder} autoComplete="off" type="search" onChange={props.onChange} value={props.value} className={cn("search-input w-full",
                 {
                     'pl-8': variant === 'withIcon',
                 })}
