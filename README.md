@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Bro Insta Fetcher
+
+## ⚙️ Tech Stack
+
+- ⚡ Next.js - Fast by default, with config optimized for performance (with App Directory)
+- 🎨 Tailwind CSS - A utility-first CSS framework for rapid UI development
+- 🧩 Radix UI/ShadCN - Headless UI components for endless customization
+- 🛠️ TypeScript - Type safety
+- 💎 CVA - Create a consistent, reusable, and atomic design system
 
 ## Getting Started
 
